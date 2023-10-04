@@ -4,10 +4,12 @@
       {% csrf_token %}
       <div style="text-align: center;" class="container">
         <h1>Cadastro de usuarios</h1>
-        Nome <input name="nome" class="form-control-sm" type="text">
-        Idade <input name="idade" class="form-control-sm" type="text">
-        CPF <input name="cpf" class="form-control-sm" type="text">
-        <button class="form-control-sm">Enviar</button>
+        Nome <input name="nome" class="form-control-sm" type="text" {% if action == 'Enviar' %}required{% endif %}>
+        Idade <input name="idade" class="form-control-sm" type="text" {% if action == 'Enviar' %}required{% endif %}>
+        CPF <input name="cpf" class="form-control-sm" type="text" {% if action == 'Enviar' %}required{% endif %}>
+        <input name="action" type="submit" value="Enviar">
+        <input name="action" type="submit" value="Ver Usuários ">
+
       </div>
     </form>
 {% endblock %}
