@@ -27,3 +27,6 @@ def usuarios(request):
             return render(request,"usuarios/usuarios.html",usuarios)
         
     return render(request,"usuarios/usuarios.html",usuarios)
+
+def index(request):
+    return render(request,"usuarios/index.html")
