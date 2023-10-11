@@ -24,21 +24,19 @@
             <button class="button button--warn" onclick="showModal()">Fechar</button>
           </header>
           <div class="form__content">
-            <form action="" method="post" class="form">
+            <form action="{% url 'listagem_usuarios' %}" method="post" class="form">
+              {% csrf_token %}
               <h1 class="title title--medium">Informações do usuário</h1>
               <label for="" class="label">
-                Nome
-              <input type="text" name="" id="" class="input" {% if action == 'Enviar' %}required{% endif %}>
+                Nome <input type="text" name="nome" class="input" type="text" {% if action == 'Enviar' %}required{% endif %}>
               </label>
               <label for="" class="label">
-                Idade
-              <input type="number" name="" id="" class="input" {% if action == 'Enviar' %}required{% endif %}>
+                Idade <input type="number" name="idade" class="input" type="text" {% if action == 'Enviar' %}required{% endif %}>
               </label>
               <label for="" class="label">
-                CPF
-                <input type="text" name="" id="" class="input" {% if action == 'Enviar' %}required{% endif %}>
+                CPF <input type="text" name="cpf" class="input" type="text" {% if action == 'Enviar' %}required{% endif %}>
               </label>
-              <input type="submit" class="button form__button" value="Enviar">
+              <input name="action" type="submit" class="button form__button" value="Enviar">
             </form>
           </div>
         </div>
