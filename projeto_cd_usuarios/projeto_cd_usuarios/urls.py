@@ -11,6 +11,8 @@ urlpatterns = [
     # Deletar e editar usuarios
     path('admini/',views.admini,name='admini'),
     # pagina principal
-    path('',views.index,name='index')
+    path('',views.index,name='index'),
+    # Excluir usuario
+    path('excluir/<int:usuario_id>/', views.excluir_usuario, name='excluir_usuario'),
 
 ]

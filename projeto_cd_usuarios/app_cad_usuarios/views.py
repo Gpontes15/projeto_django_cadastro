@@ -30,3 +30,8 @@ def usuarios(request):
 
 def index(request):
     return render(request,"usuarios/index.html")
+
+def excluir_usuario(request, usuario_id):
+    usuario = Usuario.objects.get(pk=usuario_id)
+    usuario.delete()
+    return redirect('listagem_usuarios')

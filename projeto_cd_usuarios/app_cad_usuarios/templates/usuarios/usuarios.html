@@ -59,7 +59,7 @@
               <td>{{usuario.idade}}</td>
               <td>{{usuario.cpf}}</td>
               <td>
-                <button class="button button--warn">Excluir</button>
+                <a href="{% url 'excluir_usuario' usuario.id_usuario %}">Excluir</a>
               </td>
             </tr>
             {% endfor %}
