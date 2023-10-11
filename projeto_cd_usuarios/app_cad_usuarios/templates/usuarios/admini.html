@@ -37,6 +37,10 @@
                 CPF <input type="text" name="cpf" class="input" type="text" {% if action == 'Enviar' %}required{% endif %}>
               </label>
               <input name="action" type="submit" class="button form__button" value="Enviar">
+              <!-- Se houver uma mensagem de erro, mostre-a -->
+              {% if error_message %}
+              <p class="error-message">{{ error_message }}</p>
+              {% endif %}
             </form>
           </div>
         </div>

@@ -14,5 +14,7 @@ urlpatterns = [
     path('',views.index,name='index'),
     # Excluir usuario
     path('excluir/<int:usuario_id>/', views.excluir_usuario, name='excluir_usuario'),
+    # Para duplicidade de usuarios
+    path('duplicidade/', views.usuarios, name='cpf_cadastrado'),
 
 ]
