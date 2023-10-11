@@ -8,25 +8,18 @@ def admini(request):
     return render(request,"usuarios/admini.html")
 
 def usuarios(request):
-    action = request.POST.get('action') # Obtém o valor do botão clicado
-    usuarios = {
-                'usuarios': Usuario.objects.all()
-            }
-    if request.method == 'POST':
-        if action == 'Enviar':
-            novo_usuario = Usuario()
-            novo_usuario.nome = request.POST.get('nome')
-            novo_usuario.idade = request.POST.get('idade')
-            novo_usuario.cpf = request.POST.get('cpf')
-            novo_usuario.save()
+    usuarios = Usuario.objects.all()
 
-            # Exibir todos os usuarios já cadastrados em uma nova página
-            
-            
-            # Retornar os dados para a página de listagem de usuarios
-            return render(request,"usuarios/usuarios.html",usuarios)
-        
-    return render(request,"usuarios/usuarios.html",usuarios)
+    if request.method == 'POST':
+        novo_usuario = Usuario()
+        novo_usuario.nome = request.POST.get('nome')
+        novo_usuario.idade = request.POST.get('idade')
+        novo_usuario.cpf = request.POST.get('cpf')
+        novo_usuario.save()
+
+        return render(request, "usuarios/admini.html")
+
+    return render(request,"usuarios/usuarios.html",{'usuarios':usuarios})
 
 def index(request):
     return render(request,"usuarios/index.html")
