@@ -38,7 +38,6 @@
                 CPF
                 <input type="text" name="" id="" class="input" {% if action == 'Enviar' %}required{% endif %}>
               </label>
-                Adicionar
               <input type="submit" class="button form__button" value="Enviar">
             </form>
           </div>
@@ -71,6 +70,7 @@
         <button class="button" onclick="showModal()">Adicionar usuário</button>
       </section>
     </main>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
